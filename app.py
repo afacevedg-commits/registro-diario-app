@@ -62,7 +62,7 @@ def load_data(file_name):
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
 # Nombre exacto de tu archivo
-archivo = "Plan Maestro Integrado - Entrenamiento, Alimentación y Chequeo Diario (Agosto 2026)_3.xlsx"
+archivo = "Plan Maestro Integrado - Entrenamiento, Alimentación y Chequeo Diario (Agosto 2026).xlsx"
 df_ent, df_ali, df_cheq = load_data(archivo)
 
 # Función para guardar datos usando BytesIO para evitar problemas de permisos
