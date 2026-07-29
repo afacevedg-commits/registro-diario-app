@@ -60,6 +60,9 @@ def load_data(file_name):
     except FileNotFoundError:
         st.error("⚠️ No se encontró el archivo Excel base. Por favor, verifica el nombre.")
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+    except ValueError:
+        st.error(f"⚠️ El archivo existe, pero las pestañas no coinciden. Tu Excel tiene estas hojas: {xls.sheet_names}. Debe tener exactamente: 'Entrenamiento', 'Alimentación' y 'Chequeo Diario'.")
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
 # Nombre exacto de tu archivo
 archivo = "Plan Maestro Integrado - Entrenamiento, Alimentación y Chequeo Diario (Agosto 2026).xlsx"
